@@ -1,0 +1,32 @@
+# --- Build / dependencias ---
+.next
+node_modules
+dist
+tsconfig.tsbuildinfo
+
+# --- Notas de trabajo locales (no van al repo publico) ---
+PRONT.txt
+COMO_CORRER_LOCAL_Y_NOTAS.txt
+.claude/
+.vscode/
+
+# --- Credenciales: NUNCA subir ---
+.env
+.env.local
+.env.*.local
+
+# --- Datos REALES de la empresa: NUNCA subir ---
+# Los Excel de origen contienen informacion confidencial (clientes, NITs, primas).
+scripts/*.xlsx
+scripts/*.xls
+scripts/*.csv
+scripts/*.pdf
+*.xlsx
+*.xls
+
+# --- data/*.json: SI se suben, a proposito ---
+# OJO: los JSON de data/ son datos DEMO ficticios (nombres, NITs y cifras inventados),
+# generados para poder mostrar este portal en publico. La app los lee en tiempo de
+# ejecucion (lib/data-files.ts), asi que deben viajar en el repo o el demo se rompe.
+# NO reemplazar por los archivos reales: si algun dia se copian los reales aqui,
+# ignoralos antes de hacer commit.

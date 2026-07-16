@@ -1,0 +1,406 @@
+/* ===== pyg-modal.css  (extraido de globals.css) ===== */
+/* ── Cabecera ── */
+.pyg-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px 24px 20px;
+  background: var(--module-surface);
+  border-bottom: 1px solid var(--module-border);
+  border-radius: 20px 20px 0 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.pyg-modal-header::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--module-accent);
+}
+
+.pyg-modal-header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background: linear-gradient(105deg, color-mix(in srgb, var(--module-accent) 5%, transparent) 0%, transparent 55%);
+  pointer-events: none;
+}
+
+.pyg-modal-kicker {
+  font-family: var(--font-space-mono), monospace;
+  font-size: 0.59rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--module-accent);
+  margin-bottom: 6px;
+}
+
+.pyg-modal-title {
+  margin: 0;
+  font-family: var(--font-space-mono), monospace;
+  font-size: clamp(0.9rem, 2vw, 1.18rem);
+  line-height: 1.2;
+  color: var(--module-text);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.pyg-modal-subtitle {
+  margin-top: 5px;
+  font-family: var(--font-space-mono), monospace;
+  font-size: 0.68rem;
+  color: var(--module-muted);
+  letter-spacing: 0.04em;
+}
+
+.pyg-modal-close {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 9px;
+  border: 1px solid var(--module-border);
+  background: var(--module-surface-2);
+  color: var(--module-muted);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.pyg-modal-close:hover {
+  background: color-mix(in srgb, var(--module-accent) 7%, transparent);
+  border-color: color-mix(in srgb, var(--module-accent) 25%, transparent);
+  color: var(--module-accent);
+  transform: translateY(-1px);
+}
+
+/* ── Cuerpo ── */
+.pyg-modal-body {
+  padding: 20px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pyg-modal-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+/* ── Tarjeta stat ── */
+.pyg-modal-stat {
+  background: var(--module-surface-2);
+  border: 1px solid var(--module-border);
+  border-radius: 12px;
+  padding: 13px 15px 14px;
+  min-width: 0;
+  transition: box-shadow 0.18s ease;
+}
+
+.pyg-modal-stat:hover {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.pyg-modal-stat-label {
+  display: block;
+  font-family: var(--font-space-mono), monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--module-muted);
+  margin-bottom: 7px;
+}
+
+.pyg-modal-stat-value {
+  display: block;
+  color: var(--module-text);
+  font-family: var(--font-space-mono), monospace;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.3;
+  word-break: break-word;
+}
+
+.pyg-modal-stat-value.money {
+  color: var(--module-text);
+}
+
+/* Barra visual de margen */
+.pyg-modal-margin-bar {
+  margin-top: 10px;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--module-border);
+  overflow: hidden;
+}
+
+.pyg-modal-margin-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #6366f1 0%, #a5b4fc 100%);
+  transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ── Bloque tendencia ── */
+.pyg-modal-trend {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--module-border);
+  background: var(--module-surface-2);
+  margin-top: 0;
+}
+
+.pyg-modal-trend-icon {
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  border: 1px solid var(--module-border);
+  background: var(--module-surface);
+  color: var(--module-muted);
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.pyg-modal-trend-copy {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pyg-modal-trend-label {
+  display: block;
+  font-family: var(--font-space-mono), monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--module-muted);
+  margin-bottom: 0;
+}
+
+.pyg-modal-trend-value {
+  display: block;
+  font-family: var(--font-space-mono), monospace;
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--module-text);
+  margin-top: 3px;
+}
+
+.pyg-modal-trend-sub {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.015em;
+  color: var(--module-muted);
+  line-height: 1.6;
+  margin-top: 5px;
+}
+
+/* Semántica de color en tendencia — solo el icono y el titulo llevan color; el detalle queda legible */
+.pyg-trend-up .pyg-modal-trend {
+  border-color: rgba(34, 197, 94, 0.18);
+  background: rgba(34, 197, 94, 0.03);
+}
+.pyg-trend-up .pyg-modal-trend-icon {
+  color: #16a34a;
+  border-color: rgba(34, 197, 94, 0.22);
+  background: rgba(34, 197, 94, 0.07);
+}
+.pyg-trend-up .pyg-modal-trend-value { color: #16a34a; }
+.pyg-trend-up .pyg-modal-trend-sub   { color: var(--module-text); }
+
+.pyg-trend-down .pyg-modal-trend {
+  border-color: rgba(239, 68, 68, 0.18);
+  background: rgba(239, 68, 68, 0.03);
+}
+.pyg-trend-down .pyg-modal-trend-icon {
+  color: #dc2626;
+  border-color: rgba(239, 68, 68, 0.22);
+  background: rgba(239, 68, 68, 0.07);
+}
+.pyg-trend-down .pyg-modal-trend-value { color: #dc2626; }
+.pyg-trend-down .pyg-modal-trend-sub   { color: var(--module-text); }
+
+.pyg-trend-flat .pyg-modal-trend-icon { color: var(--module-muted); }
+.pyg-trend-flat .pyg-modal-trend-sub   { color: var(--module-text); }
+
+/* ── A2 · TABULAR NUMBERS ──────────────────────────────────────────
+ * Alinea digitos en columnas monetarias y KPIs.
+ */
+.module-kpi__value,
+.kpi-value,
+.kpi-sub,
+.module-table td,
+.module-table th,
+.arl-legacy table td,
+.arl-legacy table th,
+.cartera-legacy table td,
+.cartera-legacy table th,
+.assistant-report__body {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+/* ── A7 · TABS ACTIVAS CON FILL SUAVE ──────────────────────────────
+ * Mejora la jerarquia visual sin cambiar layout.
+ */
+.module-tab-btn {
+  border-radius: 6px 6px 0 0;
+}
+
+.module-tab-btn.is-active {
+  background: rgba(220, 38, 38, 0.06);
+}
+
+.arl-legacy .tab-btn {
+  border-radius: 6px 6px 0 0;
+}
+
+.arl-legacy .tab-btn.active {
+  background: rgba(220, 38, 38, 0.06);
+}
+
+/* ── A5 · TYPING INDICATOR (chat asistente) ────────────────────────
+ * Reemplaza el texto plano "Analizando..." por 3 puntos animados.
+ */
+.assistant-shell__typing {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 0;
+}
+
+.assistant-shell__typing-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(127, 29, 29, 0.45);
+  animation: assistant-shell-typing 1.2s infinite ease-in-out;
+}
+
+.assistant-shell__typing-dot:nth-child(2) {
+  animation-delay: 0.18s;
+}
+
+.assistant-shell__typing-dot:nth-child(3) {
+  animation-delay: 0.36s;
+}
+
+@keyframes assistant-shell-typing {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.5; }
+  30% { transform: translateY(-4px); opacity: 1; }
+}
+
+/* ── A8 · BOTON EXCEL CON FILL SUAVE ───────────────────────────────
+ * Mejora visibilidad del boton Excel sin tocar la estructura.
+ */
+.arl-legacy .filter-btn--excel {
+  background: rgba(16, 185, 129, 0.08);
+  border-color: rgba(16, 185, 129, 0.45);
+  color: #047857;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.arl-legacy .filter-btn--excel:hover {
+  background: rgba(16, 185, 129, 0.14);
+  border-color: #10b981;
+  color: #047857;
+}
+
+/* ── B1 + B3 · TABLAS: zebra + hover + sticky primera columna ───────
+ * Backgrounds OPACOS son obligatorios en celdas sticky para que el
+ * texto del scroll no se cuele detras de la columna fija.
+ */
+
+/* module-table encabezados — regla de mayor especificidad para asegurar estilos */
+.module-table thead th,
+.arl-legacy table thead th,
+.cartera-legacy table thead th {
+  color: #111111 !important;
+  font-weight: 800 !important;
+  font-size: 0.65rem !important;
+  background-color: var(--module-surface-2) !important;
+  border-bottom: 2px solid #cccccc !important;
+}
+
+/* module-table (Seguros, Cartera, Usuarios, etc.) */
+.module-table tbody td {
+  background-color: #ffffff;
+}
+
+.module-table tbody tr:nth-child(even) td {
+  background-color: #fafafa;
+}
+
+.module-table tbody tr:hover td {
+  background-color: #fff5f5;
+}
+
+.module-table td:first-child,
+.module-table th:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+}
+
+.module-table thead th:first-child {
+  z-index: 12;
+  background-color: var(--module-surface-2);
+}
+
+/* arl-legacy .detalle-table (ARL DETALLE POR EMPRESA + P&G) */
+.arl-legacy .detalle-table tbody td {
+  background-color: #ffffff;
+}
+
+.arl-legacy .detalle-table tbody tr:nth-child(even) td {
+  background-color: #fafafa;
+}
+
+.arl-legacy .detalle-table tbody tr:hover td {
+  background-color: #fff5f5;
+}
+
+.arl-legacy .detalle-table td:first-child,
+.arl-legacy .detalle-table th:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+}
+
+.arl-legacy .detalle-table thead th:first-child {
+  z-index: 12;
+  background-color: var(--module-surface-2);
+}
+
+/* Sombra sutil al borde derecho de la columna sticky para indicar profundidad */
+.module-table td:first-child,
+.module-table th:first-child,
+.arl-legacy .detalle-table td:first-child,
+.arl-legacy .detalle-table th:first-child {
+  box-shadow: 1px 0 0 0 rgba(0, 0, 0, 0.04);
+}

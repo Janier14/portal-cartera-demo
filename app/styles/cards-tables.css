@@ -1,0 +1,364 @@
+/* ===== cards-tables.css  (extraido de globals.css) ===== */
+.module-main {
+  position: relative;
+  z-index: 1;
+  margin-left: 210px;
+}
+
+.module-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.module-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid var(--module-border);
+  background: var(--module-surface);
+  padding: 20px;
+}
+
+.module-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--card-bar, var(--module-accent)), var(--card-bar-soft, var(--module-accent-soft)));
+}
+
+.module-card--plain::before {
+  content: none;
+}
+
+.module-kpi__label,
+.module-section-subtitle,
+.module-empty,
+.module-table thead,
+.module-filter-label {
+  font-family: var(--font-space-mono), monospace;
+}
+
+.module-kpi__label {
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--module-muted);
+}
+
+.module-kpi__value {
+  margin-top: 8px;
+  font-family: var(--font-space-mono), monospace;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--module-text);
+}
+
+.module-kpi__sub {
+  margin-top: 4px;
+  font-size: 0.7rem;
+  color: var(--module-muted);
+}
+
+.module-section-title {
+  font-family: var(--font-space-mono), monospace;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--module-text);
+}
+
+.module-section-subtitle {
+  margin-top: 6px;
+  font-size: 0.72rem;
+  color: var(--module-muted);
+}
+
+.module-empty {
+  border-radius: 12px;
+  border: 1px dashed var(--module-border);
+  background: var(--module-surface-2);
+  padding: 40px 20px;
+  text-align: center;
+  font-size: 0.74rem;
+  color: var(--module-muted);
+}
+
+.module-pill-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.module-pill {
+  border-radius: 999px;
+  border: 1px solid var(--module-border);
+  background: var(--module-surface);
+  padding: 9px 16px;
+  font-family: var(--font-space-mono), monospace;
+  font-size: 0.68rem;
+  color: var(--module-muted);
+  transition: all 0.2s;
+}
+
+.module-pill:hover {
+  border-color: color-mix(in srgb, var(--module-accent) 25%, transparent);
+  color: var(--module-accent);
+}
+
+.module-pill.is-active {
+  background: color-mix(in srgb, var(--module-accent) 8%, transparent);
+  border-color: color-mix(in srgb, var(--module-accent) 20%, transparent);
+  color: var(--module-accent);
+}
+
+.module-field,
+.module-select {
+  width: auto;
+  min-width: 140px;
+  max-width: 200px;
+  height: 36px;
+  border-radius: 6px;
+  border: 1px solid var(--module-border);
+  background: var(--module-surface-2);
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  color: var(--module-text);
+  outline: none;
+}
+
+.module-field::placeholder {
+  color: var(--module-muted);
+}
+
+.module-table-wrap {
+  overflow: auto;
+  border-radius: 12px;
+  border: 1px solid var(--module-border);
+}
+
+.module-table {
+  min-width: 100%;
+  border-collapse: collapse;
+  font-size: 0.78rem;
+}
+
+.module-table thead tr {
+  background: var(--module-surface-2);
+}
+
+.module-table th {
+  padding: 12px 12px;
+  text-align: left;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--module-text);
+  border-bottom: 2px solid var(--module-accent);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--module-surface-2);
+  white-space: nowrap;
+}
+
+.module-table td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--module-border);
+  color: var(--module-text);
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.module-table tbody tr:nth-child(even) td {
+  background: rgba(0, 0, 0, 0.018);
+}
+
+.detalle-table th,
+.arl-top-table th {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--module-surface-2);
+}
+
+.cartera-facturacion-table {
+  width: 100%;
+  min-width: 100%;
+  table-layout: fixed;
+}
+
+.cartera-facturacion-table th,
+.cartera-facturacion-table td {
+  padding: 8px 10px;
+  vertical-align: middle;
+}
+
+.cartera-facturacion-table th {
+  white-space: normal;
+}
+
+.cartera-facturacion-table td {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cartera-facturacion-table--with-company th:nth-child(1),
+.cartera-facturacion-table--with-company td:nth-child(1) {
+  width: 80px;
+}
+
+.cartera-facturacion-table--with-company th:nth-child(2),
+.cartera-facturacion-table--with-company td:nth-child(2),
+.cartera-facturacion-table--without-company th:nth-child(1),
+.cartera-facturacion-table--without-company td:nth-child(1) {
+  width: 110px;
+}
+
+.cartera-facturacion-table--with-company th:nth-child(3),
+.cartera-facturacion-table--with-company td:nth-child(3),
+.cartera-facturacion-table--without-company th:nth-child(2),
+.cartera-facturacion-table--without-company td:nth-child(2) {
+  width: 260px;
+}
+
+.cartera-facturacion-table--with-company th:nth-child(4),
+.cartera-facturacion-table--with-company td:nth-child(4),
+.cartera-facturacion-table--without-company th:nth-child(3),
+.cartera-facturacion-table--without-company td:nth-child(3) {
+  width: 90px;
+}
+
+.cartera-facturacion-table--with-company th:nth-child(5),
+.cartera-facturacion-table--with-company td:nth-child(5),
+.cartera-facturacion-table--without-company th:nth-child(4),
+.cartera-facturacion-table--without-company td:nth-child(4) {
+  width: 90px;
+}
+
+.cartera-facturacion-table--with-company th:nth-child(6),
+.cartera-facturacion-table--with-company td:nth-child(6),
+.cartera-facturacion-table--without-company th:nth-child(5),
+.cartera-facturacion-table--without-company td:nth-child(5),
+.cartera-facturacion-table--with-company th:nth-child(7),
+.cartera-facturacion-table--with-company td:nth-child(7),
+.cartera-facturacion-table--without-company th:nth-child(6),
+.cartera-facturacion-table--without-company td:nth-child(6) {
+  width: 110px;
+}
+
+.cartera-facturacion-table--with-company th:nth-child(8),
+.cartera-facturacion-table--with-company td:nth-child(8),
+.cartera-facturacion-table--without-company th:nth-child(7),
+.cartera-facturacion-table--without-company td:nth-child(7),
+.cartera-facturacion-table--with-company th:nth-child(11),
+.cartera-facturacion-table--with-company td:nth-child(11),
+.cartera-facturacion-table--without-company th:nth-child(10),
+.cartera-facturacion-table--without-company td:nth-child(10) {
+  width: 130px;
+}
+
+.cartera-facturacion-table--with-company th:nth-child(9),
+.cartera-facturacion-table--with-company td:nth-child(9),
+.cartera-facturacion-table--without-company th:nth-child(8),
+.cartera-facturacion-table--without-company td:nth-child(8) {
+  width: 110px;
+}
+
+.cartera-facturacion-table--with-company th:nth-child(10),
+.cartera-facturacion-table--with-company td:nth-child(10),
+.cartera-facturacion-table--without-company th:nth-child(9),
+.cartera-facturacion-table--without-company td:nth-child(9) {
+  width: 90px;
+}
+
+.module-table tbody tr:hover td {
+  background: color-mix(in srgb, var(--module-accent) 4%, transparent);
+}
+
+.responsive-table-shell {
+  overflow: hidden;
+}
+
+.responsive-table-wrap {
+  width: 100%;
+}
+
+.responsive-table {
+  width: 100%;
+}
+
+@media (max-width: 899px) {
+  .responsive-table-wrap {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+  }
+
+  .responsive-table {
+    width: auto;
+    min-width: max-content;
+    table-layout: auto;
+  }
+
+  .responsive-table-sticky-cell {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    background: var(--module-surface);
+    box-shadow: 10px 0 18px -16px rgba(15, 23, 42, 0.32);
+    background-clip: padding-box;
+  }
+
+  .responsive-table-sticky-head {
+    z-index: 5;
+    background: var(--module-surface-2);
+  }
+
+  .responsive-table-sticky-body {
+    z-index: 4;
+    background: var(--module-surface);
+  }
+
+  .detalle-cliente-table .detalle-cliente-col {
+    min-width: 180px !important;
+    width: 180px;
+    max-width: 180px;
+  }
+
+  .detalle-cliente-table td.detalle-cliente-col,
+  .detalle-cliente-table th.detalle-cliente-col {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .detalle-cliente-table td.detalle-cliente-col {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .detalle-cliente-table .detalle-mes-col {
+    min-width: 110px !important;
+    width: 110px;
+  }
+
+  .detalle-cliente-table td.detalle-mes-col,
+  .detalle-cliente-table th.detalle-mes-col {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}
+
+@media (min-width: 900px) {
+  .responsive-table-sticky-cell {
+    position: static;
+    box-shadow: none;
+  }
+}
+
