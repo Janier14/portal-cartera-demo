@@ -2,7 +2,7 @@
 
 Portal interno de Business Intelligence para la gestión de cartera, facturación y comisiones de un holding de corretaje de seguros. Centraliza en una sola aplicación lo que antes vivía disperso en decenas de hojas de Excel.
 
-**[▶ Ver demo en vivo](#)** · _sin login: entrás y navegás_
+Podés verlo en funcionamiento en las [capturas](#capturas), o levantarlo en local en dos comandos — el modo demo no necesita base de datos ni credenciales.
 
 > ### ⚠️ Demo con datos ficticios
 > Este repositorio es una **versión de demostración**. Todos los datos —empresas, clientes, NITs, aseguradoras y cifras— son **generados artificialmente**. No contiene información real de la empresa ni de sus clientes.
